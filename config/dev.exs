@@ -24,8 +24,6 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :el_abirynth, ElAbirynth.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
   database: "el_abirynth_dev",
   hostname: "localhost",
   pool_size: 10
