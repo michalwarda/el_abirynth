@@ -8,6 +8,7 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :el_abirynth, ElAbirynth.Endpoint,
   http: [port: 4000],
+  host: "0.0.0.0",
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
