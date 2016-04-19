@@ -12,6 +12,7 @@ defmodule ElAbirynth do
       # Start the Ecto repository
       supervisor(ElAbirynth.Repo, []),
       # Here you could define other workers and supervisors as children
+      supervisor(ElAbirynth.GameAgent, [])
       # worker(ElAbirynth.Worker, [arg1, arg2, arg3]),
     ]
 

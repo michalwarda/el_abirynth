@@ -1,5 +1,5 @@
 defmodule ElAbirynth.GameTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias ElAbirynth.Game
 
   test "new game returns an array" do
@@ -30,10 +30,8 @@ defmodule ElAbirynth.GameTest do
   end
 
   test "move player is'nt allowed when moving into wall" do
-    game = Game.new |> Game.add_player(1)
-    assert_raise RuntimeError, fn ->
-      game |> Game.move_player(1, 'up')
-    end
+    game = Game.new |> Game.add_player(1) |> Game.move_player(1, 'up')
+    assert game == Game.new |> Game.add_player(1)
   end
 
   test "game restarts when player reaches end" do

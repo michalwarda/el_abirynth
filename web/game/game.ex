@@ -17,7 +17,7 @@ defmodule ElAbirynth.Game do
   end
 
   def reset_players do
-    fn({id, _}, new_players) -> Map.put new_players, id, %{x: 1, y: 1} end
+    fn {id, _}, new_players -> Map.put new_players, id, %{x: 1, y: 1} end
   end
 
   def remove_player(game, id) do
@@ -39,7 +39,7 @@ defmodule ElAbirynth.Game do
     |> Enum.at(moves[direction][:x])
 
     case new_position_value do
-      1 -> raise "Unauthorized Action"
+      1 -> game
       3 -> %{game | players: game.players |> Enum.reduce(%{}, reset_players)}
       _ -> %{game | players: %{game[:players] | id => moves[direction]}}
     end
