@@ -1,7 +1,11 @@
 defmodule ElAbirynth.GameAgent do
   alias ElAbirynth.Game
 
-  def start_link do
+  def start_link(opts) do
+    Agent.start_link fn -> ElAbirynth.Game.new end, opts
+  end
+
+  def start_link() do
     Agent.start_link fn -> ElAbirynth.Game.new end
   end
 

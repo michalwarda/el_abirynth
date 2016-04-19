@@ -8,10 +8,3 @@ config :el_abirynth, ElAbirynth.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
-
-# Configure your database
-config :el_abirynth, ElAbirynth.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  database: "el_abirynth_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox

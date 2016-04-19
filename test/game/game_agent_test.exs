@@ -29,5 +29,4 @@ defmodule ElAbirynth.GameAgentTest do
     GameAgent.remove_player(game, 1)
     assert GameAgent.get(game) == Game.new |> Game.add_player(1) |> Game.remove_player(1)
   end
-
 end

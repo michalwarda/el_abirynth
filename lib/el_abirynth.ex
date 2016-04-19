@@ -9,10 +9,8 @@ defmodule ElAbirynth do
     children = [
       # Start the endpoint when the application starts
       supervisor(ElAbirynth.Endpoint, []),
-      # Start the Ecto repository
-      supervisor(ElAbirynth.Repo, []),
       # Here you could define other workers and supervisors as children
-      supervisor(ElAbirynth.GameAgent, [])
+      worker(ElAbirynth.GameAgent, [[name: GameState]]),
       # worker(ElAbirynth.Worker, [arg1, arg2, arg3]),
     ]
 
