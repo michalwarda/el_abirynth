@@ -12,8 +12,8 @@ defmodule ElAbirynth.Game do
     }
   end
 
-  def add_player(game, id \\ 0) do
-    %{game | players: %{id => %{x: 1, y: 1}}}
+  def add_player(game, id) do
+    %{game | players: Map.put(game[:players], id, %{x: 1, y: 1})}
   end
 
   def reset_players do
