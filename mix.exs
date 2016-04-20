@@ -31,6 +31,7 @@ defmodule ElAbirynth.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.1.4"},
      {:gettext, "~> 0.9"},
+     {:secure_random, "~> 0.2"},
      {:cowboy, "~> 1.0"}]
   end
 

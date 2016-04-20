@@ -17,10 +17,10 @@ defmodule ElAbirynth.GameAgentTest do
   test "move player moves player" do
     {:ok, game} = GameAgent.start_link
     GameAgent.add_player(game, 1)
-    GameAgent.move_player(game, 1, 'up')
-    assert GameAgent.get(game) == Game.new |> Game.add_player(1) |> Game.move_player(1, 'up')
-    GameAgent.move_player(game, 1, 'down')
-    assert GameAgent.get(game) == Game.new |> Game.add_player(1) |> Game.move_player(1, 'down')
+    GameAgent.move_player(game, 1, "up")
+    assert GameAgent.get(game) == Game.new |> Game.add_player(1) |> Game.move_player(1, "up")
+    GameAgent.move_player(game, 1, "down")
+    assert GameAgent.get(game) == Game.new |> Game.add_player(1) |> Game.move_player(1, "down")
   end
 
   test "remove player removes player" do

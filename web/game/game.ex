@@ -28,10 +28,10 @@ defmodule ElAbirynth.Game do
     player = game[:players][id]
 
     moves = %{
-      'down' => %{x: player[:x], y: player[:y] + 1},
-      'up' => %{x: player[:x], y: player[:y] - 1},
-      'right' => %{x: player[:x] + 1, y: player[:y]},
-      'left' => %{x: player[:x] - 1, y: player[:y]},
+      "down" => %{x: player[:x], y: player[:y] + 1},
+      "up" => %{x: player[:x], y: player[:y] - 1},
+      "right" => %{x: player[:x] + 1, y: player[:y]},
+      "left" => %{x: player[:x] - 1, y: player[:y]},
     }
 
     new_position_value = game[:map]

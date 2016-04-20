@@ -21,7 +21,7 @@ defmodule ElAbirynth.GameTest do
 
   test "move player moves player in the specified direction" do
     game = Game.new |> Game.add_player(1)
-    assert %{x: 1, y: 2} = Game.move_player(game, 1, 'down')[:players][1]
+    assert %{x: 1, y: 2} = Game.move_player(game, 1, "down")[:players][1]
   end
 
   test "remove player removes player from game" do
@@ -30,18 +30,18 @@ defmodule ElAbirynth.GameTest do
   end
 
   test "move player is'nt allowed when moving into wall" do
-    game = Game.new |> Game.add_player(1) |> Game.move_player(1, 'up')
+    game = Game.new |> Game.add_player(1) |> Game.move_player(1, "up")
     assert game == Game.new |> Game.add_player(1)
   end
 
   test "game restarts when player reaches end" do
     game = Game.new
     |> Game.add_player(1)
-    |> Game.move_player(1, 'down')
-    |> Game.move_player(1, 'right')
-    |> Game.move_player(1, 'right')
-    |> Game.move_player(1, 'down')
-    |> Game.move_player(1, 'down')
+    |> Game.move_player(1, "down")
+    |> Game.move_player(1, "right")
+    |> Game.move_player(1, "right")
+    |> Game.move_player(1, "down")
+    |> Game.move_player(1, "down")
     assert %{x: 1, y: 1} = game[:players][1]
   end
 end
