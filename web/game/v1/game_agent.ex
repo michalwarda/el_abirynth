@@ -24,4 +24,8 @@ defmodule ElAbirynth.V1.GameAgent do
   def remove_player(game, id) do
     Agent.update(game, fn state -> Game.remove_player state, id end)
   end
+
+  def reset(game) do
+    Agent.update(game, fn _ -> Game.new end)
+  end
 end
