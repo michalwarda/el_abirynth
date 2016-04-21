@@ -4,10 +4,8 @@ defmodule ElAbirynth.GameChannelTest do
   alias ElAbirynth.GameChannel
 
   setup do
-    id = SecureRandom.base64(8)
-    {:ok, reply, socket} =
-      socket("player:#{id}", %{id: id})
-      |> subscribe_and_join(GameChannel, "games:lobby")
+    {:ok, socket} = connect(ElAbirynth.UserSocket, %{})
+    {:ok, reply, socket} = subscribe_and_join(socket, GameChannel, "games:lobby")
     {:ok, reply: reply, socket: socket}
   end
 
