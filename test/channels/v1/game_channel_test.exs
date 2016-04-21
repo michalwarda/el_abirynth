@@ -1,10 +1,11 @@
-defmodule ElAbirynth.GameChannelTest do
+defmodule ElAbirynth.V1.GameChannelTest do
   use ElAbirynth.ChannelCase
 
-  alias ElAbirynth.GameChannel
+  alias ElAbirynth.V1.GameChannel
+  alias ElAbirynth.V1.UserSocket
 
   setup do
-    {:ok, socket} = connect(ElAbirynth.UserSocket, %{})
+    {:ok, socket} = connect(UserSocket, %{})
     {:ok, reply, socket} = subscribe_and_join(socket, GameChannel, "games:lobby")
     {:ok, reply: reply, socket: socket}
   end

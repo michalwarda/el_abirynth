@@ -1,6 +1,6 @@
-defmodule ElAbirynth.GameAgentTest do
-  alias ElAbirynth.Game
-  alias ElAbirynth.GameAgent
+defmodule ElAbirynth.V1.GameAgentTest do
+  alias ElAbirynth.V1.Game
+  alias ElAbirynth.V1.GameAgent
 
   use ExUnit.Case, async: true
   test "get game returns game" do

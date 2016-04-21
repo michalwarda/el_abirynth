@@ -1,8 +1,8 @@
-defmodule ElAbirynth.UserSocket do
+defmodule ElAbirynth.V1.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  channel "games:*", ElAbirynth.GameChannel
+  channel "games:*", ElAbirynth.V1.GameChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket, timeout: 45_000

@@ -1,4 +1,4 @@
-defmodule ElAbirynth.Game do
+defmodule ElAbirynth.V1.Game do
   def new(players \\ %{}) do
     %{
       map: [

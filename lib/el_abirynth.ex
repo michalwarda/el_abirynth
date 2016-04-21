@@ -10,7 +10,7 @@ defmodule ElAbirynth do
       # Start the endpoint when the application starts
       supervisor(ElAbirynth.Endpoint, []),
       # Here you could define other workers and supervisors as children
-      worker(ElAbirynth.GameAgent, [[name: GameState]]),
+      worker(ElAbirynth.V1.GameAgent, [[name: GameStateV1]]),
       # worker(ElAbirynth.Worker, [arg1, arg2, arg3]),
     ]
 

@@ -1,6 +1,6 @@
-defmodule ElAbirynth.GameTest do
+defmodule ElAbirynth.V1.GameTest do
   use ExUnit.Case, async: true
-  alias ElAbirynth.Game
+  alias ElAbirynth.V1.Game
 
   test "new game returns an array" do
     assert Game.new == %{
