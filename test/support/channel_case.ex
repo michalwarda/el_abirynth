@@ -25,7 +25,7 @@ defmodule ElAbirynth.ChannelCase do
     end
   end
 
-  setup _ do
+  setup do
     :ok
     ElAbirynth.V1.GameAgent.reset(GameStateV1)
   end
