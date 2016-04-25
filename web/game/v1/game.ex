@@ -1,15 +1,9 @@
 defmodule ElAbirynth.V1.Game do
+  alias ElAbirynth.V2.MazeGenerator
+
   def new(players \\ %{}) do
-    %{
-      map: [
-        [1, 1, 1, 1, 1],
-        [1, 2, 1, 0, 1],
-        [1, 0, 0, 0, 1],
-        [1, 0, 1, 0, 1],
-        [1, 1, 1, 3, 1],
-      ],
-      players: players,
-    }
+    map = MazeGenerator.new(15, 9)
+    %{map: map, players: players}
   end
 
   def add_player(game, id) do
@@ -40,7 +34,7 @@ defmodule ElAbirynth.V1.Game do
 
     case new_position_value do
       1 -> game
-      3 -> %{game | players: game.players |> Enum.reduce(%{}, reset_players)}
+      3 -> %{game | map: MazeGenerator.new(31, 17), players: game.players |> Enum.reduce(%{}, reset_players)}
       _ -> %{game | players: %{game[:players] | id => moves[direction]}}
     end
   end
