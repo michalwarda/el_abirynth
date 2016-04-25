@@ -18,9 +18,9 @@ defmodule ElAbirynth.V2.MazeGeneratorTest do
   end
 
   test 'merge_sets_arround_wall merges set' do
-    assert MazeGenerator.merge_sets_arround_wall([[{1, 1}], [{1, 3}]], {1, 2}) == [[{1, 1}, {1, 3}]]
-    assert MazeGenerator.merge_sets_arround_wall([[{1, 1}], [{3, 1}]], {2, 1}) == [[{1, 1}, {3, 1}]]
-    assert MazeGenerator.merge_sets_arround_wall([[{1, 1}], [{3, 1}], [{7, 7}]], {2, 1}) == [[{7, 7}], [{1, 1}, {3, 1}]]
+    assert MazeGenerator.merge_sets_arround_wall([[{1, 1}], [{1, 3}]], {1, 2}) == {true, [[{1, 1}, {1, 3}]]}
+    assert MazeGenerator.merge_sets_arround_wall([[{1, 1}], [{3, 1}]], {2, 1}) == {true, [[{1, 1}, {3, 1}]]}
+    assert MazeGenerator.merge_sets_arround_wall([[{1, 1}], [{3, 1}], [{7, 7}]], {2, 1}) == {true, [[{7, 7}], [{1, 1}, {3, 1}]]}
   end
 
   test 'wall_neighbourghs returns cells around wall' do
