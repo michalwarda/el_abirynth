@@ -2,7 +2,7 @@ defmodule ElAbirynth.V3.Game do
   alias ElAbirynth.V3.MazeGenerator
 
   def generate_maze do
-    MazeGenerator.new(31, 17)
+    MazeGenerator.new(27, 15)
   end
 
   def new(players \\ %{}) do
@@ -10,11 +10,11 @@ defmodule ElAbirynth.V3.Game do
   end
 
   def add_player(game, id) do
-    %{game | players: Map.put(game[:players], id, %{x: 1, y: 15})}
+    %{game | players: Map.put(game[:players], id, %{x: 1, y: 13})}
   end
 
   def reset_players do
-    fn {id, _}, new_players -> Map.put new_players, id, %{x: 1, y: 15} end
+    fn {id, _}, new_players -> Map.put new_players, id, %{x: 1, y: 13} end
   end
 
   def remove_player(game, id) do
