@@ -1,7 +1,7 @@
 defmodule ElAbirynth.Endpoint do
   use Phoenix.Endpoint, otp_app: :el_abirynth
 
-  socket "/socket", ElAbirynth.V1.UserSocket
+  socket "/socket", ElAbirynth.V3.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
