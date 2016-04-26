@@ -19,6 +19,7 @@ defmodule ElAbirynth.V4.GameChannel do
   end
 
   def terminate(_message, socket) do
+    GameCommandQueue.remove_player(GameCommandState, socket.assigns.id)
     GameAgent.remove_player(GameStateV3, socket.assigns.id)
   end
 end

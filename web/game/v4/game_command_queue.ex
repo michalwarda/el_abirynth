@@ -19,6 +19,15 @@ defmodule ElAbirynth.V4.GameCommandQueue do
     GenServer.call(server, {:add_move, player_queue})
   end
 
+  def remove_player(server, player_id) do
+    GenServer.call(server, {:remove_player, player_id})
+  end
+
+  def handle_call({:remove_player, player_id}, _from, players_queue) do
+    players_queue = players_queue |> Enum.reject(fn({id, _}) -> id == player_id end)
+    {:reply, players_queue, players_queue}
+  end
+
   def handle_call({:add_move, player_queue}, _from, players_queue) do
     players_queue = (players_queue |> Enum.reject(fn({id, _}) -> id == elem(player_queue, 0) end)) ++ [player_queue]
     {:reply, players_queue, players_queue}
