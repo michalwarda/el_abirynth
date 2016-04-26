@@ -29,6 +29,6 @@ defmodule ElAbirynth.V2.MazeGeneratorTest do
   end
 
   test 'concats cells with walls' do
-    assert MazeGenerator.concat_cells_with_walls([[{1, 1}], [{1, 3}], [{3, 3}]], [{1, 2}, {2, 3}], []) |> Enum.sort == [{1, 2}, {2, 3}]
+    assert MazeGenerator.cells_with_walls([[{1, 1}], [{1, 3}], [{3, 3}]], [{1, 2}, {2, 3}], []) |> Enum.sort == [{1, 2}, {2, 3}]
   end
 end
